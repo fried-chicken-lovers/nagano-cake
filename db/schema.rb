@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2022_01_18_071248) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.text "explanation"
+    t.integer "price"
+    t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_deleted", default: false
+  end
+  
   create_table "jenres", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
