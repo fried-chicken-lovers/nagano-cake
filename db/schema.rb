@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_074251) do
-
+ActiveRecord::Schema.define(version: 2022_01_18_071248) do
   create_table "addresses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,6 +29,28 @@ ActiveRecord::Schema.define(version: 2022_01_18_074251) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.text "explanation"
+    t.integer "price"
+    t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_deleted", default: false
+  end
+  
+  create_table "jenres", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "members", force: :cascade do |t|
@@ -53,6 +74,14 @@ ActiveRecord::Schema.define(version: 2022_01_18_074251) do
   end
 
   create_table "orders", force: :cascade do |t|
+    
+    t.string "postal_code"
+    t.string "adress"
+    t.string "name"
+    t.integer "shipping_cost"
+    t.integer "total_payment"
+    t.integer "status"
+    t.integer "payment_method"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
