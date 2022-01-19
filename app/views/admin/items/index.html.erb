@@ -1,0 +1,27 @@
+<h2>商品一覧（管理者）</h2>
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>商品ID</th>
+      <th>商品名</th>
+      <th>税抜価格</th>
+      <th>ジャンル</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+</table>
+
+<tbody>
+  <% @items.each do |item| %>
+    <tr>
+      <td>
+        <p><%= item.name %></p>
+        <p><%= item.explanation %></p>
+        <p><%= item.price %></p>
+      </td>
+  <% end %>
+    </tr>
+</tbody>
+<li><%= link_to ' logout', destroy_admin_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
