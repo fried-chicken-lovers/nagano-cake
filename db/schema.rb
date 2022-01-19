@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_01_19_115659) do
+=======
+ActiveRecord::Schema.define(version: 2022_01_19_114405) do
+>>>>>>> e8ffbd0dc93552315bb5c574ed0c9d38ed4466f7
 
   create_table "addresses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,6 +42,12 @@ ActiveRecord::Schema.define(version: 2022_01_19_115659) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "explanation"
@@ -46,12 +56,6 @@ ActiveRecord::Schema.define(version: 2022_01_19_115659) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_deleted", default: false
-  end
-
-  create_table "jenres", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
   end
 
   create_table "members", force: :cascade do |t|
@@ -90,8 +94,8 @@ ActiveRecord::Schema.define(version: 2022_01_19_115659) do
     t.integer "total_payment"
     t.integer "status"
     t.integer "payment_method"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
