@@ -1,45 +1,40 @@
-<% if user_signed_in? && @member == current_user %>
-  <h1><%= @member.name %>さんの会員詳細</h1>
-  <% else %>
-  <h1><%= @member.name %>さんの会員詳細</h1>
-<% end %>
-</div>
+<% @member.find do |member| %>
+<h1><%= @member.last_name %><%= member.first_name %>さんの会員詳細</h1>
 
   <table class="table">
-  <% @member.find do |member| %>
     <tr>
     <th>会員ID</th>
-    <td><%= membr.id %></td>
+    <td><%= member.id %></td>
     </tr>
     <tr>
     <th>氏名</th>
-    <td><%= membr.last_name %><%= member.first_name %></td>
+    <td><%= member.last_name %><%= member.first_name %></td>
     </tr>
     <tr>
     <th>フリガナ</th>
-    <td><%= membr.last_name_kana %><%= member.first_name_kana %></td>
+    <td><%= member.last_name_kana %><%= member.first_name_kana %></td>
     </tr>
     <tr>
     <th>氏名</th>
-    <td><%= membr.last_name %><%= member.first_name %></td>
+    <td><%= member.last_name %><%= member.first_name %></td>
     </tr>
     <tr>
     <th>郵便番号</th>
-    <td><%= membr.postal_code %></td>
+    <td><%= member.postal_code %></td>
     </tr>
     <tr>
     <th>住所</th>
-    <td><%= membr.address %></td>
+    <td><%= member.address %></td>
     </tr>
     <tr>
     <th>電話番号</th>
-    <td><%= membr.telephone_namber %></td>
+    <td><%= member.telephone_namber %></td>
     </tr><tr>
     <th>メールアドレス</th>
-    <td><%= membr.email %></td>
+    <td><%= member.email %></td>
     </tr><tr>
     <th>会員ステータス</th>
-    <td><%= membr.is_deleted %></td>
+    <td><%= member.is_deleted %></td>
     </tr>
   <% end %>
   </table>
