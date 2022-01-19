@@ -1,5 +1,5 @@
 class Admin::MembersController < ApplicationController
-   before_action :authenticate_user!
+   before_action :authenticate_member!
    def index
       @members = Member.all.page(params[:page]).per(10)
    end
