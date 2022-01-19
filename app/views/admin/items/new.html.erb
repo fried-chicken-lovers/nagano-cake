@@ -1,14 +1,17 @@
-<%= form_with model: @item, local:ture do |f| %>
-  <%= f.画像 %>
+<%= form_with model: @item, url: new_admin_item_path, local:true do |f| %>
+
   <%= f.label :name %>
   <%= f.text_field :explanation %>
-  <!--<%= f.select :保存先のカラム名, [["選択肢１", "実際にDBに保存させる内容"], ["選択肢２", "実際にDBに保存させる内容"]], include_blank: "選択して下さい" %>-->
+  <%= f.label :price %>
+
+  <%= f.submit %>
+
+
+  <%= f.画像 %>
+    <!--<%= f.select :保存先のカラム名, [["選択肢１", "実際にDBに保存させる内容"], ["選択肢２", "実際にDBに保存させる内容"]], include_blank: "選択して下さい" %>-->
   <!--<%= f.collection_select :保存先のカラム名, テーブル（モデル）名.all, :実際にDBに保存させるカラム名, :選択肢に用いるカラム名, include_blank: "選択して下さい" %>-->
   <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択して下さい" %>
-  <%= f.label :price %>
-  <%= f.label :販売中 %>
-  <%= f.radio_button :item, :販売中 :is_deleted, id: :checkbox,:as => :boolean %>
-  <%= f.label :販売停止中 %>
-  <%= f..check_box :is_deleted, id: :checkbox,:as => :boolean %>
-  <%= f.submit %>
+
+  <%= f.collection_radio_buttons :item, Item.is_deleted_i18n, :販売中 , :販売停止中 %>
+
 <% end %>
