@@ -1,0 +1,29 @@
+[33m051bc95[m[33m ([m[1;36mHEAD -> [m[1;32madmin-members-show[m[33m)[m HEAD@{0}: pull origin develop: Merge made by the 'recursive' strategy.
+[33m1d98038[m[33m ([m[1;31morigin/admin-members-show[m[33m)[m HEAD@{1}: commit: admin-member-show
+[33ma76ff1f[m[33m ([m[1;31morigin/admin-members[m[33m, [m[1;32madmin-members[m[33m)[m HEAD@{2}: checkout: moving from admin-members to admin-members-show
+[33ma76ff1f[m[33m ([m[1;31morigin/admin-members[m[33m, [m[1;32madmin-members[m[33m)[m HEAD@{3}: commit: members-index devise
+[33mf00168f[m[33m ([m[1;32mdevelop[m[33m)[m HEAD@{4}: checkout: moving from develop to admin-members
+[33mf00168f[m[33m ([m[1;32mdevelop[m[33m)[m HEAD@{5}: pull origin develop: Fast-forward
+[33mc4d5868[m HEAD@{6}: checkout: moving from root-setup to develop
+[33ma8f2c92[m[33m ([m[1;31morigin/root-setup[m[33m, [m[1;32mroot-setup[m[33m)[m HEAD@{7}: commit: add root
+[33m5dcd359[m HEAD@{8}: pull origin develop: Fast-forward
+[33md473929[m[33m ([m[1;31morigin/order-enum[m[33m, [m[1;32morder-enum[m[33m)[m HEAD@{9}: checkout: moving from order-enum to root-setup
+[33md473929[m[33m ([m[1;31morigin/order-enum[m[33m, [m[1;32morder-enum[m[33m)[m HEAD@{10}: commit: enum_order-order_details_japanese
+[33mc4d5868[m HEAD@{11}: checkout: moving from develop to order-enum
+[33mc4d5868[m HEAD@{12}: pull origin develop: Fast-forward
+[33m569a876[m HEAD@{13}: checkout: moving from carts-model-column to develop
+[33mbf35c13[m[33m ([m[1;31morigin/carts-model-column[m[33m, [m[1;32mcarts-model-column[m[33m)[m HEAD@{14}: commit: add model-column-cart
+[33m8ad7b82[m[33m ([m[1;31morigin/items-model-column[m[33m, [m[1;32mitems-model-column[m[33m)[m HEAD@{15}: checkout: moving from items-model-column to carts-model-column
+[33m8ad7b82[m[33m ([m[1;31morigin/items-model-column[m[33m, [m[1;32mitems-model-column[m[33m)[m HEAD@{16}: commit: add items-model
+[33m569a876[m HEAD@{17}: checkout: moving from develop to items-model-column
+[33m569a876[m HEAD@{18}: checkout: moving from 569a876c36d82707ecb298eba3035cc0f76c9f9b to develop
+[33m569a876[m HEAD@{19}: checkout: moving from items-model-column to items-model-column
+[33m569a876[m HEAD@{20}: checkout: moving from develop to items-model-column
+[33m569a876[m HEAD@{21}: pull origin develop: Fast-forward
+[33m0b7a1b5[m HEAD@{22}: pull origin develop: Fast-forward
+[33mba4a9f3[m HEAD@{23}: pull: Fast-forward
+[33m92bfce7[m HEAD@{24}: checkout: moving from main to develop
+[33mf540ba9[m[33m ([m[1;32mmain[m[33m)[m HEAD@{25}: checkout: moving from develop to main
+[33m92bfce7[m HEAD@{26}: pull: Fast-forward
+[33m67a06cc[m HEAD@{27}: checkout: moving from main to develop
+[33mf540ba9[m[33m ([m[1;32mmain[m[33m)[m HEAD@{28}: clone: from github.com:fried-chicken-lovers/nagano-cake.git
