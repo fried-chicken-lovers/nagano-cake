@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-  belongs_to :jenre
+  belongs_to :genre
 
   has_many :carts, dependent: :destroy
   has_many :order_details
