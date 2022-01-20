@@ -1,6 +1,6 @@
 <h1>商品新規登録</h1>
 <table>
-  <%= form_with model: @item, url: new_admin_item_path, local:true do |f| %>
+  <%= form_with model: @item, url: admin_items_path, local:true do |f| %>
   <tr>
   <th>商品画像</th>
   <td><%= f.attachment_field :image %></td>
@@ -15,7 +15,7 @@
   </tr>
   <tr>
   <th>ジャンル</th>
-  <td><%= f.collection_select :genre_id, Genre.all, :id, :name, :genres %></td>
+  <td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td>
   </tr>
   <tr>
   <th>税抜価格</th>
@@ -23,7 +23,7 @@
   </tr>
   <tr>
   <th>販売ステータス</th>
-  <td><%= f.collection_radio_buttons :item, Item.is_deleted_i18n, :販売中 , :販売停止中 %></td>
+  <td><%= f.collection_radio_buttons :is_deleted, Item.is_deleteds_i18n, :first , :last %></td>
   </tr>
   <td><%= f.submit %></td>
   <% end %>
