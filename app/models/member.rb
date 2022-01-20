@@ -8,4 +8,6 @@ class Member < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many :orders
   has_many :carts, dependent: :destroy
+
+  enum is_deleted: { 退会: true, 有効: false }
 end
