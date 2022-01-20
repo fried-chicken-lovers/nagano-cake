@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_114405) do
+ActiveRecord::Schema.define(version: 2022_01_20_064459) do
 
   create_table "addresses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -90,8 +90,9 @@ ActiveRecord::Schema.define(version: 2022_01_19_114405) do
     t.integer "total_payment"
     t.integer "status"
     t.integer "payment_method"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "member_id"
   end
 
 end
