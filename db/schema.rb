@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(version: 2022_01_19_114405) do
     t.integer "total_payment"
     t.integer "status"
     t.integer "payment_method"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
