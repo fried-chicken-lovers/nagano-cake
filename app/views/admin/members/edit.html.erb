@@ -1,3 +1,5 @@
+<%= render 'admin/header' %>
+
 <h2><%= @member.last_name %><%= @member.first_name %>さんの会員詳細</h2>
 
 <%= form_with model: @member, url: admin_member_path, local:true do |f| %>
