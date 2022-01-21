@@ -13,13 +13,13 @@
   <tbody>
     <% @items.each do |item| %>
     <tr>
-      <td><%= item.id %></td>
-      <td><%= item.name %></td>
-      <td><%= item.price %></td>
-      <td><%= item.genre.name %><td>
-      <td><%= item.is_deleted_i18n %></td>
+      <th><%= item.id %></th>
+      <th><%= item.name %></th>
+      <th><%= item.price %></th>
+      <th><%= item.genre.name %><th>
+      <th><%= item.is_deleted_i18n %></th>
     </tr>
-  <% end %>
+    <% end %>
   </tbody>
 </table>
 <li><%= link_to ' logout', destroy_admin_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
