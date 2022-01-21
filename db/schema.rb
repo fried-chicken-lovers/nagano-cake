@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_064019) do
+ActiveRecord::Schema.define(version: 2022_01_20_092407) do
 
   create_table "addresses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_064019) do
     t.string "name"
     t.string "postal_code"
     t.string "residence"
+    t.integer "member_id"
   end
 
   create_table "admins", force: :cascade do |t|
@@ -38,6 +39,12 @@ ActiveRecord::Schema.define(version: 2022_01_20_064019) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "explanation"
@@ -47,12 +54,6 @@ ActiveRecord::Schema.define(version: 2022_01_20_064019) do
     t.datetime "updated_at", null: false
     t.boolean "is_deleted", default: false
     t.integer "genre_id"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
   end
 
   create_table "members", force: :cascade do |t|
@@ -91,8 +92,8 @@ ActiveRecord::Schema.define(version: 2022_01_20_064019) do
     t.integer "total_payment"
     t.integer "status"
     t.integer "payment_method"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
