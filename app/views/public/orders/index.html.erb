@@ -1,0 +1,29 @@
+<p>order#index</p>
+
+<p>注文履歴一覧</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <td>注文日</td>
+      <td>発送先</td>
+      <td>注文商品</td>
+      <td>支払い金額</td>
+      <td>ステータス</td>
+      <td>注文詳細</td>
+    </tr>
+    <% @orders.each do |orders| %>
+    <tr>
+      <td>orders.created_at</td>
+      <td>orders.adress</td>
+      <td>orders.</td>
+      <td>orders.total_payment</td>
+      <td>orders.payment_method</td>
+      <td><% link_to "詳細表示", public_order_path %></td>
+      <td></td>
+    </tr>
+    <% end %>
+  </thead>
+
+</table>
