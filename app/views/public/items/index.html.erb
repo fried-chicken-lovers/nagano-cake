@@ -10,13 +10,15 @@
         <% end %>
       </th>
     </tr>
+
     <tr>
       <th>
-      <%= link_to public_item_path(item.id) do %>
+       <%= link_to public_item_path(item.id) do %>
         <%= item.name %>
-      <% end %>
-      </th>
+       <% end %>
+       </th>
     </tr>
+
     <tr>
       <th><%= item.price %></th>
     </tr>
