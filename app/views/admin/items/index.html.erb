@@ -15,8 +15,9 @@
       <th>ステータス</th>
     </tr>
   </thead>
+
+  <% @items.each do |item| %>
   <tbody>
-    <% @items.each do |item| %>
     <tr>
       <th><%= item.id %></th>
       <th>
@@ -25,10 +26,10 @@
         <% end %>
       </th>
       <th><%= item.price %></th>
-      <th><%= item.genre.name %><th>
+      <th><%= item.genre.name %></th>
       <th><%= item.is_deleted_i18n %></th>
     </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
