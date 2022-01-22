@@ -3,16 +3,28 @@ class Public::MembersController < ApplicationController
     @member = current_member
   end
 
-  def quit
+  def unsubscribe#退会画面
+    @member = current_member
   end
 
-  def out
+  def withdraw#退会機能
+    @member = current_member
+    @member.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
 
-  def edit
+  def edit#編集画面
+    @member = current_member
   end
 
-  def update
+  def update#編集機能
+    @member = current_member
+    if @member.update(member_params)
+      redirect_to public_members_path(@member.id)
+    else
+      render "edit"
+    end
   end
 
   private

@@ -67,3 +67,5 @@ gem 'devise'
 gem "enum_help"
 
 gem 'kaminari'
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
