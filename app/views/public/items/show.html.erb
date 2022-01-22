@@ -1,0 +1,31 @@
+<%= render 'public/header' %>
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = div1>
+    <%= attachment_image_tag @item, :image, size: '300x300' %>
+    </div>
+    <table>
+      <tr>
+        <th><h3><%= @item.name %></h3></th>
+      </tr>
+      <tr>
+        <th><%= @item.explanation %></th>
+      </tr>
+      <tr>
+        <th><%= @item.price %></th>
+      </tr>
+      <tr>
+        <th>
+          <%= form_with model: @item, url: public_item_path, local:true do |f| %>
+            <%= f.label :quantity, "個数選択" %>
+            <%= f.select :quantity, [1,2,3,4,5,6,7,8,9,10] %>
+          <% end %>
+        </th>
+      </tr>
+        <th>
+          <buttan class="btn btn-success"><%= link_to "カートに入れる", public_cart_items_path(@item), method: :post %></button>
+        </th>
+      </tr>
+    </table>
+  </div>
+</div>
