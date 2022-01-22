@@ -1,6 +1,10 @@
 <%= render 'admin/header' %>
-<h2>商品一覧（管理者）</h2>
-
+<div class="container">
+  <div class="raw">
+    <h3>商品一覧（管理者）</h3>
+    <buttn class="btn btn-success"><%= link_to "商品追加", new_admin_item_path %></buttn>
+  </div>
+  
 <table class = "table">
   <thead>
     <tr>
@@ -15,7 +19,11 @@
     <% @items.each do |item| %>
     <tr>
       <th><%= item.id %></th>
-      <th><%= item.name %></th>
+      <th>
+        <%= link_to admin_item_path(item.id) do %>
+          <%= item.name %>
+        <% end %>
+      </th>
       <th><%= item.price %></th>
       <th><%= item.genre.name %><th>
       <th><%= item.is_deleted_i18n %></th>
@@ -23,3 +31,5 @@
     <% end %>
   </tbody>
 </table>
+
+</div>
