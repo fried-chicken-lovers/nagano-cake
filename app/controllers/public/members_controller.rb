@@ -3,16 +3,25 @@ class Public::MembersController < ApplicationController
     @member = current_member
   end
 
-  def quit
+  def unsubscribe#退会画面
+    @member = current_member
   end
 
-  def out
+  def unsubscribe#退会画面
+    @member = current_member
   end
 
   def edit
+    @member = current_member
   end
 
   def update
+    @member = current_member
+    if @member.update(member_params)
+      redirect_to public_members_path(@member.id)
+    else
+      render "edit"
+    end
   end
 
   private
