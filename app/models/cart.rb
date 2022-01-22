@@ -1,10 +1,10 @@
 class Cart < ApplicationRecord
-  
+
   belongs_to :member
-  belongs_to :items
-  
+  belongs_to :item
+
   def subtotal
-    item.with_tax_price * amount
+    item.with_tax_price * quantity
   end
-  
+
 end

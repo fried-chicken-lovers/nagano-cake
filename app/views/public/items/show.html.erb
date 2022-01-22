@@ -16,14 +16,16 @@
       </tr>
       <tr>
         <th>
-          <%= form_with model: @item, url: public_item_path, local:true do |f| %>
+          <%= form_with model: @cart, url: public_cart_items_path, local: true do |f| %>
+            <%= f.hidden_field :item_id, value: @item.id %>
             <%= f.label :quantity, "個数選択" %>
             <%= f.select :quantity, [1,2,3,4,5,6,7,8,9,10] %>
+            <%= f.submit "カートに入れる" %>
           <% end %>
         </th>
       </tr>
         <th>
-          <buttan class="btn btn-success"><%= link_to "カートに入れる", public_cart_items_path(@item), method: :post %></button>
+          <!--<buttan class="btn btn-success"><%#= link_to "カートに入れる", public_cart_items_path(@item), method: :post %></button>-->
         </th>
       </tr>
     </table>
