@@ -1,7 +1,7 @@
 <%= render 'public/header' %>
 <div>
 <h1>配送先登録/一覧</h1>
-<%= form_with model:@address, local:true do |f| %>
+<%= form_with model:@delivery_address, url:public_delivery_addresses_path, local:true do |f| %>
 
   <h4>郵便番号（ハイフンなし）</h4>
   <%= f.text_field :postal_code %>
@@ -25,15 +25,17 @@
         <th>住所</th>
         <th>宛名</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
      <% @delivery_addresses.each do |delivery_address| %>
       <tr>
-        <td><%= address.postal_code %></td>
-        <td><%= address.residence %></td>
-        <td><%= address.name %></td>
-        <td></td>
+        <td><%= delivery_address.postal_code %></td>
+        <td><%= delivery_address.residence %></td>
+        <td><%= delivery_address.name %></td>
+        <td><%= link_to "編集する", edit_public_delivery_address_path(delivery_address) %></td>
+        <td><%= link_to "削除する", public_delivery_address_path(delivery_address), method: :delete %></td>
       </tr>
      <% end %>
     </tbody>
