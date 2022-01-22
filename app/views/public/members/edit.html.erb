@@ -1,3 +1,54 @@
 <%= render 'public/header' %>
 <h1>Public::Members#edit</h1>
 <p>Find me in app/views/public/members/edit.html.erb</p>
+
+
+<p>会員情報編集</p>
+<%= form_with model:@member, url: public_members_path(@member), method: :PATCH, local:true do |f| %>
+
+  <div>名前</div>
+   <div class="field">
+      <%= f.label :（姓） %><br />
+      <%= f.text_field :first_name, autocomplete: "first_name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :（名） %><br />
+      <%= f.text_field :last_name, autocomplete: "last_name" %>
+    </div>
+
+    <div>フリガナ</div>
+    <div class="field">
+      <%= f.label :（セイ） %><br />
+      <%= f.text_field :first_name_kana, autocomplete: "first_name_kana" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :（メイ） %><br />
+      <%= f.text_field :last_name_kana, autocomplete: "last_name_kana" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :郵便番号（ハイフンなし） %><br />
+      <%= f.text_field :postal_code, autocomplete: "postal-code" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :住所 %><br />
+      <%= f.text_area :address, autocomplete: "address" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :電話番号（ハイフンなし） %><br />
+      <%= f.text_field :telephone_namber, autocomplete: "telephone_namber" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "編集内容の保存" %>
+    </div>
+<% end %>
