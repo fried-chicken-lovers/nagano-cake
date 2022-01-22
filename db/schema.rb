@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2022_01_20_092407) do
 
+
+
   create_table "addresses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,6 +39,8 @@ ActiveRecord::Schema.define(version: 2022_01_20_092407) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "member_id"
+    t.integer "item_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -54,6 +58,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_092407) do
     t.datetime "updated_at", null: false
     t.boolean "is_deleted", default: false
     t.integer "genre_id"
+    t.integer "amount"
   end
 
   create_table "members", force: :cascade do |t|
@@ -92,8 +97,8 @@ ActiveRecord::Schema.define(version: 2022_01_20_092407) do
     t.integer "total_payment"
     t.integer "status"
     t.integer "payment_method"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false 
+    t.datetime "updated_at", null: false
   end
 
 end
