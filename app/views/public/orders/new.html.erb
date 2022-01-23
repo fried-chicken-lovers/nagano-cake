@@ -2,6 +2,7 @@
 
 <h3>注文情報入力</h3>
 
+
 <table>
   <%= form_with model:@orders, url:public_orders_confirm_path, method: :post, local:true do |f| %>
     <tr>
@@ -28,3 +29,4 @@
       <td><%= f.submit, '確認画面へ進む' %></td>
   <% end %>
 </table>
+
