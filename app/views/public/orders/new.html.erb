@@ -1,0 +1,32 @@
+
+
+<h3>注文情報入力</h3>
+
+
+<table>
+  <%= form_with model:@orders, url:public_orders_confirm_path, method: :post, local:true do |f| %>
+    <tr>
+      <th>支払方法</th>
+      <td><%= order.payment_method %></td>
+      <th>お届け先</th>
+      <td>
+        <p>登録住所から選択</p>
+          <%= f.collection_radio_buttons :adress, Order.adress %>
+      </td>
+      <td><%= f.collection_radio_buttons %>
+          <%= f.collection_select :adress,Member.adress %>
+      </td>
+      <td>
+        <p>新しいお届け先</p>
+        <p>郵便番号（ハイフンなし）</p>
+          <%= f.text_field :postal_code %>
+        <p>住所</p>
+          <%= f.text_field :adress %>
+        <p>宛名</p>
+          <%= f.text_field :name %>
+      </td>
+    </tr>
+      <td><%= f.submit, '確認画面へ進む' %></td>
+  <% end %>
+</table>
+
