@@ -6,9 +6,35 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
-    @order = Order.new
+    @order = Order.new(order_params)
+    if params[:order][:address_number] == "1"
+        @order.name = current_member.last_name
+        @order.adress = current_member.view_member_address
 
+    elsif params[:order][:address_number] == "2"
+        if Address.exists?(name: params[:order][:residence])
+          @order.name = Address.find(params[:order][:residence]).lats_name
+          @order.adress = Address.find(params[:order][:residence]).address
+        else
+          render :new
+        end
+    elsif params[:order][:address_number] == "3"
+       address_new = current_member.addresses.new(address_params)
+        if address_new.save
+        else
+          render :new
+        end
+    else
+        redirect_to  public_orders_path
+    end
+
+    @cart_items = current_member.carts.all
+    @total = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
   end
+
+
+
+
 
   def create
     cart_items = current_member.cart.all
