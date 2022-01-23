@@ -15,7 +15,22 @@
  */
  @import "bootstrap";
 
+.container {
+ padding: 20px;
+}
  .navbar {
    background-color: gray;
+  }
+
+  h3 {
+   padding: 10px;
+  }
+
+  table {
+   border-collapse: collapse;
+  }
+
+  th, td {
+   padding: 5px 30px;
   }
 
