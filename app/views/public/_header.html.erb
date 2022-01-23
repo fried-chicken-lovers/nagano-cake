@@ -5,9 +5,18 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+          <div cass= 'row'>
+            <div class="header-name">
+              <% if member_signed_in? %>
+            <div>ようこそ、<%= current_member.last_name %>さん!</div>
+              <% end %>
+            </div>
+          </div>
+
+
       <div class="collapse navbar-collapse link-light" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
-        <% if admin_signed_in? %>
+        <% if member_signed_in? %>
           <li><%= link_to "マイページ", public_members_path, class: 'nav-link text-light' %></li>
           <li><%= link_to "商品一覧", public_items_path,class: 'nav-link text-light' %></li>
           <li><%= link_to "カート", public_cart_items_path, class: 'nav-link text-light' %></li>

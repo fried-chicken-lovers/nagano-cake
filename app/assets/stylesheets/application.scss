@@ -22,6 +22,7 @@
    background-color: gray;
   }
 
+
   h3 {
    padding: 10px;
   }
@@ -34,4 +35,11 @@
   th, td {
    padding: 5px 30px;
   }
+
+
+.header-name {
+ display: flex;
+	text-align: center;
+	justify-content: center;
+}
 
