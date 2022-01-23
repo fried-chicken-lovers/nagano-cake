@@ -1,6 +1,10 @@
 <%= render 'admin/header' %>
-<h2>商品一覧（管理者）</h2>
-
+<div class="container">
+  <div class="raw">
+    <h3>商品一覧（管理者）</h3>
+    <buttn class="btn btn-success"><%= link_to "商品追加", new_admin_item_path %></buttn>
+  </div>
+  
 <table class = "table">
   <thead>
     <tr>
@@ -11,16 +15,22 @@
       <th>ステータス</th>
     </tr>
   </thead>
+
+  <% @items.each do |item| %>
   <tbody>
-    <% @items.each do |item| %>
     <tr>
       <th><%= item.id %></th>
-      <th><%= item.name %></th>
+      <th>
+        <%= link_to admin_item_path(item.id) do %>
+          <%= item.name %>
+        <% end %>
+      </th>
       <th><%= item.price %></th>
-      <th><%= item.genre.name %><th>
+      <th><%= item.genre.name %></th>
       <th><%= item.is_deleted_i18n %></th>
     </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
-<li><%= link_to ' logout', destroy_admin_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
+
+</div>

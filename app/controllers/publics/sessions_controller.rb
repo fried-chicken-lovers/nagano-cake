@@ -20,6 +20,17 @@ class Publics::SessionsController < Devise::SessionsController
 
   # protected
 protected
+
+  def reject_member
+  member = Member.find_by(email: params[:member][:email])
+    if member
+      if (member.valid_password?(params[:member][:password]) && (member.active_for_authentication? == false))
+        redirect_to new_member_session_path
+      end
+    end
+  end
+
+  
   def after_sign_in_path_for(resource)
     public_members_path
   end
