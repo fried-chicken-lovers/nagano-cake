@@ -11,6 +11,10 @@ class Member < ApplicationRecord
 
   enum is_deleted: { 退会: true, 有効: false }
 
+  def view_member_address
+    "〒" + postal_code + " " + address + " " + last_name + first_name
+  end
+
   def active_for_authentication?
   super && self.is_deleted == '有効'
   end
