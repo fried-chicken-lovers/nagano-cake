@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2022_01_23_044635) do
-
 
   create_table "addresses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -100,12 +98,8 @@ ActiveRecord::Schema.define(version: 2022_01_23_044635) do
     t.integer "status"
     t.integer "payment_method"
     t.datetime "created_at"
-
-
-    t.datetime "updated_at", null: false
-    t.integer "member_id", null: false
-
-
+    t.datetime "updated_at"
+    t.integer "member_id"
   end
 
 end
