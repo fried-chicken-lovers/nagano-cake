@@ -1,4 +1,6 @@
 class Admin::OrdersController < ApplicationController
+  def index
+    @orders = Order.all
 
   def show
     @order = Order.find(params[:id])
@@ -8,5 +10,6 @@ class Admin::OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:postal_code, :address, :name, :shipping_cost, :total_payment, :status, :payment_method, :member_id)
+
   end
 end

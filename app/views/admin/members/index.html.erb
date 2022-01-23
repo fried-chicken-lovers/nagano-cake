@@ -1,26 +1,31 @@
 <%= render 'admin/header' %>
+<div class="container">
+  <div class="raw">
+    <div class="col">
+      <h3>会員一覧</h3>
 
-<h2>会員一覧</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @members.each do |member| %>
+          <tr>
+            <td><%= member.id %></td>
+            <td><%= member.last_name %><%= member.first_name %></td>
+            <td><%= member.email %></td>
+            <td><%= member.is_deleted_i18n %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>会員ID</th>
-      <th>氏名</th>
-      <th>メールアドレス</th>
-      <th>ステータス</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @members.each do |member| %>
-    <tr>
-      <td><%= member.id %></td>
-      <td><%= member.last_name %><%= member.first_name %></td>
-      <td><%= member.email %></td>
-      <td><%= member.is_deleted_i18n %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= paginate @members %>
+      <%= paginate @members %>
+    </div>
+  </div>
+</div>

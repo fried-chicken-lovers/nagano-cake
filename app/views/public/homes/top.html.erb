@@ -1,6 +1,26 @@
 <%= render 'public/header' %>
-<h1>Top</h1>
-<p>ようこそ、ながのCAKEへ！<br>このサイトは、ケーキ販売のECサイトとなります。
-<br>会員でない方も商品の閲覧はできますが、<br>購入には会員登録が必要になります。</p>
+<div class="container">
+  <div class="raw">
+    <div class="col-md-12">
+      <p>ようこそ、ながのCAKEへ！<br>このサイトは、ケーキ販売のECサイトとなります。
+      <br>会員でない方も商品の閲覧はできますが、<br>購入には会員登録が必要になります。</p>
+    </div>
+  </div>
 
-<%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
+  <div class="raw">
+    <h3>新着商品</h3>
+  </div>
+  <div class="raw">
+    <div class="col-md-4">
+      <div class="top-items">
+        <% @items.each do |item| %>
+          <%= link_to admin_item_path(item.id) do %>
+            <%= attachment_image_tag item, :image, size: '100x100' %></br>
+            <%= item.name %></br>
+            <%= item.price %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
