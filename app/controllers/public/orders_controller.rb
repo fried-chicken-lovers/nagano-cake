@@ -10,7 +10,7 @@ class Public::OrdersController < ApplicationController
   end
 
 
- 
+
 
 
   def confirm
@@ -29,7 +29,7 @@ class Public::OrdersController < ApplicationController
 
   def show
   end
-　　　　
+
   private
   def order_params
     params.require(:order).permit(:postal_code, :adress, :name, :payment_method, :total_payment, :status, :shipping_cost)
