@@ -4,8 +4,9 @@
 <h3>注文情報入力</h3>
 
 
-<table>
-  <%= form_with model:@order, url:public_orders_confirm_path, method: :post, local:true do |f| %>
+
+<%= form_with model:@order, url:public_orders_confirm_path, method: :post, local:true do |f| %>
+  <table>
     <tr>
       <td>支払方法</td>
     </tr>
@@ -53,5 +54,6 @@
     <tr>
       <td><%= f.submit '確認画面へ進む', class: 'btn btn-success'%></td>
     </tr>
-  <% end %>
-</table>
+  </table>
+<% end %>
+
