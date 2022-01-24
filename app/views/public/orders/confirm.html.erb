@@ -11,14 +11,14 @@
       <td>小計</td>
     </tr>
 
-    <% @cart_item.each do |cart| %>
+    <% @cart_items.each do |cart| %>
       <%= cart.item.name %>
       <%= (cart.item.price).to_s(:delimited) %>
       <%= cart.quantity %>
       <%= (cart.item.price*cart.quantity).to_s(:delimited) %>
     <% end %>
 
-    <%= form_with model: @order, url:public_orders, method: :post, local: true do |f| %>
+    <%= form_with model: @order, url:public_orders_path, method: :post, local: true do |f| %>
       <%= f.hidden_field :name %>
       <%= f.hidden_field :address %>
       <%= f.hidden_field :total_price, value: @total %>

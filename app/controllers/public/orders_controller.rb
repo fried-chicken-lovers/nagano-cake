@@ -1,5 +1,5 @@
 class Public::OrdersController < ApplicationController
-
+  before_action :authenticate_member!
 
   def new
     @order = Order.new
@@ -12,9 +12,9 @@ class Public::OrdersController < ApplicationController
         @order.adress = current_member.view_member_address
 
     elsif params[:order][:address_number] == "2"
-        if Address.exists?(name: params[:order][:residence])
-          @order.name = Address.find(params[:order][:residence]).lats_name
-          @order.adress = Address.find(params[:order][:residence]).address
+        if Address.exists?(id: params[:order][:residence])
+          @order.name = Address.find(params[:order][:residence]).id
+          @order.adress = Address.find(params[:order][:residence]).id
         else
           render :new
         end
@@ -37,16 +37,16 @@ class Public::OrdersController < ApplicationController
 
 
   def create
-    cart_items = current_member.cart.all
+    cart_items = current_member.carts.all
     @order = current_member.orders.new(order_params)
 
     if @order.save
       cart_items.each do |cart|
-        order_detail = OrderDetails.new
+        order_detail = OrderDetail.new
         order_detail.item_id =  cart.item_id
         order_detail.order_id = @order.id
-        order_detail.order_quantity = cart.quantity
-        order_detail.order_price = cart.item.price
+        order_detail.amount = cart.quantity
+        order_detail.price = cart.item.price
         order_detail.save
       end
       redirect_to public_orders_thanx_path
