@@ -1,4 +1,4 @@
-
+<%= render 'public/header', member: @member %>
 
 
 <h3>注文情報入力</h3>
@@ -51,8 +51,7 @@
       </td>
     </tr>
     <tr>
-      <td><%= f.submit '確認画面へ進む' %></td>
+      <td><%= f.submit '確認画面へ進む', class: 'btn btn-success'%></td>
     </tr>
-
   <% end %>
 </table>

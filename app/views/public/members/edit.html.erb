@@ -1,9 +1,6 @@
-<%= render 'public/header' %>
-<h1>Public::Members#edit</h1>
-<p>Find me in app/views/public/members/edit.html.erb</p>
+<%= render 'public/header', member: @member %>
 
-
-<p>会員情報編集</p>
+<h3>会員情報編集</h3>
 <%= form_with model:@member, url: public_members_path(@member), method: :PATCH, local:true do |f| %>
 
   <div>名前</div>
