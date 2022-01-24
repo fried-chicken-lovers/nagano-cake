@@ -20,12 +20,13 @@
     </tr>
     <tr>
     <%= form_with model: @order, url:public_orders_path, method: :post, local: true do |f| %>
-      <%= f.hidden_field :name %>
-      <%= f.hidden_field :address %>
-      <%= f.hidden_field :total_price, value: @total %>
-      <td>
-        <%= f.submit "注文を確定する" %>
-      </td>
+
+      <%= f.hidden_field :name, value: @order.name %>
+      <%= f.hidden_field :adress, value: @order.adress %>
+      <%= f.hidden_field :total_payment, value: @total %>
+      <%= f.hidden_field :payment_method, value: @order.payment_method %>
+      <%= f.hidden_field :postal_code, value: @order.postal_code %>
+      <%= f.submit "注文を確定する" %>
     <% end %>
     </tr>
   </thead>

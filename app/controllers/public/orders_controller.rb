@@ -8,13 +8,16 @@ class Public::OrdersController < ApplicationController
   def confirm
     @order = Order.new(order_params)
     if params[:order][:address_number] == "1"
-        @order.name = current_member.last_name
-        @order.adress = current_member.view_member_address
+        @order.name = current_member.last_name + current_member.first_name
+        @order.adress = current_member.address
+        @order.postal_code = current_member.postal_code
 
     elsif params[:order][:address_number] == "2"
         if Address.exists?(id: params[:order][:residence])
-          @order.name = Address.find(params[:order][:residence]).id
-          @order.adress = Address.find(params[:order][:residence]).id
+          @address = Address.find(params[:order][:residence])
+          @order.name = @address.name
+          @order.adress = @address.residence
+          @order.postal_code = @address.postal_code
         else
           render :new
         end
@@ -39,6 +42,7 @@ class Public::OrdersController < ApplicationController
   def create
     cart_items = current_member.carts.all
     @order = current_member.orders.new(order_params)
+    @order.shipping_cost = 880
 
     if @order.save
       cart_items.each do |cart|
