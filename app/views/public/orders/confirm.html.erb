@@ -10,20 +10,24 @@
       <td>数量</td>
       <td>小計</td>
     </tr>
-
-    <% @cart_items.each do |cart| %>
-      <%= cart.item.name %>
-      <%= (cart.item.price).to_s(:delimited) %>
-      <%= cart.quantity %>
-      <%= (cart.item.price*cart.quantity).to_s(:delimited) %>
-    <% end %>
-
+    <tr>
+      <% @cart_items.each do |cart| %>
+        <td><%= cart.item.name %></td>
+        <td><%= (cart.item.price).to_s(:delimited) %></td>
+        <td><%= cart.quantity %></td>
+        <td><%= (cart.item.price*cart.quantity).to_s(:delimited) %></td>
+      <% end %>
+    </tr>
+    <tr>
     <%= form_with model: @order, url:public_orders_path, method: :post, local: true do |f| %>
       <%= f.hidden_field :name %>
       <%= f.hidden_field :address %>
       <%= f.hidden_field :total_price, value: @total %>
-      <%= f.submit "注文を確定する" %>
+      <td>
+        <%= f.submit "注文を確定する" %>
+      </td>
     <% end %>
+    </tr>
   </thead>
 
 
