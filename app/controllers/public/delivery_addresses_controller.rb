@@ -3,6 +3,7 @@ class Public::DeliveryAddressesController < ApplicationController
   def index
     @delivery_address = Address.new
     @delivery_addresses = Address.all
+    @delivery_addresses = Address.where(member_id: current_member.id).includes(:member).order("created_at DESC") #他人の住所出さない
   end
 
   def create
