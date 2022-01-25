@@ -3,7 +3,6 @@
 class Publics::RegistrationsController < Devise::RegistrationsController
 
  before_action :configure_permitted_parameters, if: :devise_controller?
-
   protected
 
   def configure_permitted_parameters
