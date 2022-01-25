@@ -3,8 +3,8 @@
   <div class="raw">
     <div class="col-md-12">
     <h3>商品新規登録</h3>
+    <%= form_with model: @item, url: admin_items_path, local:true do |f| %>
     <table>
-      <%= form_with model: @item, url: admin_items_path, local:true do |f| %>
       <tr>
       <th>商品画像</th>
       <td><%= f.attachment_field :image %></td>
@@ -30,8 +30,8 @@
       <td><%= f.collection_radio_buttons :is_deleted, Item.is_deleteds_i18n, :first , :last %></td>
       </tr>
       <td><%= f.submit '新規登録', class: 'btn btn-success' %></td>
-      <% end %>
     </table>
+    <% end %>
     </div>
   </div>
 </div>
