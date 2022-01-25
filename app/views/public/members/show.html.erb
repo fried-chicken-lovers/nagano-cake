@@ -1,37 +1,64 @@
 <%= render 'public/header', member: @member %>
-<h3>マイページ</h3>
-<p>登録情報</p>
-<%= link_to " 編集する", edit_public_members_path, class: "btn btn-success" %>
 
-<%= link_to "配達先登録", public_delivery_addresses_path, class: "btn btn-primary" %>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-12">
+      <h3>マイページ</h3>
+    </div>
+  </div>
+</div>
 
-<table >
-	<tbody>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-12">
+			<table>
+				<tr>
+					<td>
+						<p>登録情報</p>
+					</td>
+					<td>
+						<%= link_to " 編集する", edit_public_members_path, class: "btn btn-success" %>
+					</td>
+				</tr>
+			</table>
 
-			<tr>
-				<td>氏名</td>
-				<td><%= @member.last_name %><%= @member.first_name %></td>
-			</tr>
-			<tr>
-				<td>カナ</td>
-				<td><%= @member.last_name_kana %><%= @member.first_name_kana %></td>
-			</tr>
-			<tr>
-				<td>郵便番号</td>
-				<td><%= @member.postal_code %></td>
-			</tr>
-			<tr>
-				<td>住所</td>
-				<td><%= @member.address %></td>
-			</tr>
-			<tr>
-				<td>電話番号</td>
-				<td><%= @member.telephone_namber %></td>
-			</tr>
-			<tr>
-				<td>メールアドレス</td>
-				<td><%= @member.email %></td>
-			</tr>
-	</tbody>
-</table>
 
+			<table >
+				<tbody>
+
+						<tr>
+							<td>氏名</td>
+							<td><%= @member.last_name %><%= @member.first_name %></td>
+						</tr>
+						<tr>
+							<td>カナ</td>
+							<td><%= @member.last_name_kana %><%= @member.first_name_kana %></td>
+						</tr>
+						<tr>
+							<td>郵便番号</td>
+							<td><%= @member.postal_code %></td>
+						</tr>
+						<tr>
+							<td>住所</td>
+							<td><%= @member.address %></td>
+						</tr>
+						<tr>
+							<td>電話番号</td>
+							<td><%= @member.telephone_namber %></td>
+						</tr>
+						<tr>
+							<td>メールアドレス</td>
+							<td><%= @member.email %></td>
+						</tr>
+				</tbody>
+			</table>
+
+			<table>
+				<tr>
+					<td><%= link_to "配達先登録", public_delivery_addresses_path, class: "btn btn-primary" %></td>
+					<td><%= link_to "注文履歴 ", public_orders_path, class: "btn btn-primary" %></td>
+				</tr>
+			</table>
+		</div>
+  </div>
+</div>
