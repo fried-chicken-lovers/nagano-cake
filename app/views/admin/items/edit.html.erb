@@ -5,8 +5,8 @@
 
   <div class = 'row'>
     <div class="my-3">
+      <%= form_with model: @item, url: admin_item_path(@item), local:true do |f| %>
       <table>
-        <%= form_with model: @item, url: admin_items_path, method: :get, local:true do |f| %>
         <tr>
         <th>商品画像</th>
         <td><%= f.attachment_field :image %></td>
@@ -32,8 +32,8 @@
         <td><%= f.collection_radio_buttons :is_deleted, Item.is_deleteds_i18n, :first , :last %></td>
         </tr>
         <td><%= f.submit '編集を保存', class: 'btn btn-success' %></td>
-        <% end %>
       </table>
+      <% end %>
     </div>
   </div>
 </div>
