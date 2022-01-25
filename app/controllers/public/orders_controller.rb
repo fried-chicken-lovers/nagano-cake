@@ -33,6 +33,7 @@ class Public::OrdersController < ApplicationController
 
     @cart_items = current_member.carts.all
     @total = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
+    @amount = @total + 880
   end
 
 
