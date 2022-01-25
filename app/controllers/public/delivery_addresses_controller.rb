@@ -20,6 +20,11 @@ class Public::DeliveryAddressesController < ApplicationController
 
   def edit
     @delivery_address = Address.find(params[:id])
+    if @delivery_address.member == current_member
+      render "edit"
+    else
+      redirect_to public_delivery_addresses_path(@delivery_address)
+    end
   end
 
   def update
