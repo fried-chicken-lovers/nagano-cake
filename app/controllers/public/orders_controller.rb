@@ -50,7 +50,7 @@ class Public::OrdersController < ApplicationController
         order_detail.item_id =  cart.item_id
         order_detail.order_id = @order.id
         order_detail.amount = cart.quantity
-        order_detail.price = cart.item.price
+        order_detail.price = cart.item.price * 1.1
         order_detail.save
       end
       redirect_to public_orders_thanx_path
