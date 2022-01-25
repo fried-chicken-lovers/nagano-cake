@@ -8,7 +8,9 @@
       payment_method: # カラム名（payment_methodカラムに対して）
         credit_card: "クレジットカード"
         transfer: "銀行振込"
-      status:
+
+    order:
+      status_method:
         waiting_payment: "入金待ち"
         confirm_payment: "入金確認"
         making: "商品製作中"
@@ -16,7 +18,7 @@
         sent: "発送済み"
 
     order_detail:
-      making_status:
+      making_method:
         impossible: "製作不可"
         waiting: "製作待ち"
         making: "製作中"
