@@ -63,8 +63,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_member.orders
-
+    @order_detail = OrderDetail.all
   end
 
   def show
