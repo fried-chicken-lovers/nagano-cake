@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_044635) do
+ActiveRecord::Schema.define(version: 2022_01_25_065017) do
 
   create_table "addresses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_044635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "member_id"
+    t.integer "item_id"
   end
 
 end
