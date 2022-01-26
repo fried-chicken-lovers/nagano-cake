@@ -32,7 +32,7 @@
   </tr>
   <tr>
     <td>請求金額</td>
-    <td><%= @amount %></td>
+    <td><%= @total + 880 %></td>
   </tr>
 </table>
 
@@ -41,7 +41,7 @@
     <td>支払方法</td>
   </tr>
   <tr>
-    <td><%= @order.payment_method %></td>
+    <td><%= @order.payment_method_i18n %></td>
   </tr>
   <tr>
     <td>お届け先</td>
