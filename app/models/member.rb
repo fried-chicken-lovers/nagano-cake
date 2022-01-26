@@ -23,6 +23,6 @@ class Member < ApplicationRecord
   end
 
   def active_for_authentication?
-    super && self.is_deleted == '有効'
+    super && self.is_deleted == false
   end
 end
