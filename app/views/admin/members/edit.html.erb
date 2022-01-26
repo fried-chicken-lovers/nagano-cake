@@ -32,9 +32,10 @@
         </tr><tr>
         <th>メールアドレス</th>
         <td><%= f.text_field :email %></td>
-        </tr><tr>
+        </tr>
+        <tr>
         <th>会員ステータス</th>
-        <td><%= f.collection_radio_buttons :is_deleted, Member.is_deleteds_i18n, :first , :last %></td>
+        <td><%= f.collection_radio_buttons :is_deleted, {"true"=>"退会", "false"=>"有効"}, :first , :last %></td>
         </tr>
         <td><%= f.submit "変更を保存", class: "btn btn-success" %></td>
       </table>
