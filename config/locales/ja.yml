@@ -1,9 +1,4 @@
  ja:
-  time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
-      short: "%m/%d %H:%M"
-
   activerecord:
     errors:
       messages:
@@ -34,5 +29,9 @@
         sale: "販売中"
         sold: "販売停止中"
 
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%m/%d %H:%M"
 
 

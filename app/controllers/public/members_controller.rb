@@ -8,9 +8,13 @@ class Public::MembersController < ApplicationController
     @member = current_member
   end
 
-  def unsubscribe#退会画面
+  def withdraw#退会画面
     @member = current_member
+    @member.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
+
 
   def edit
     @member = current_member
