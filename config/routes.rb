@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-
 
   # 管理者用
   # URL /admin/sign_in ...
@@ -42,7 +40,4 @@ Rails.application.routes.draw do
     resources :order_details, only: [:update]
   end
 
-=======
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
->>>>>>> ef326a456f152e7da3c012ddd405b655571dbb79
 end
