@@ -1,0 +1,32 @@
+<%= render 'admin/header' %>
+<div class = 'container'>
+  <h3>商品詳細</h3>
+  <div class = 'row'>
+    <div class = div1>
+    <%= attachment_image_tag @item, :image, size: '300x300' %>
+    </div>
+    <table class='table div2'>
+      <thead>
+        <tr>
+          <th>商品名</th>
+          <th>商品説明</th>
+          <th>ジャンル</th>
+          <th>税込価格（税抜価格）</th>
+          <th>販売ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @item.name %></td>
+          <td><%= @item.explanation %></td>
+          <td><%= @item.genre.name %></td>
+          <td><%= (@item.with_tax_price).to_s + "(" + (@item.price).to_s + ")" %></td>
+          <td><%= @item.is_deleted_i18n %></td>
+        </tr>
+      </tbody>
+    </table>
+    <%= link_to edit_admin_item_path(@item) do %>
+    <buttan class="btn btn-success">編集する</button>
+    <% end %>
+  </div>
+</div>

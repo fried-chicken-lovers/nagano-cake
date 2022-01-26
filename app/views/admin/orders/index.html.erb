@@ -1,0 +1,37 @@
+<%= render 'admin/header' %>
+
+<div class="container">
+  <div class="raw">
+    <div class="col">
+      <h3>注文履歴一覧</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>購入日時</th>
+            <th>購入者</th>
+            <th>注文個数</th>
+            <th>注文ステータス</th>
+          </tr>
+        </thead>
+        <dbody>
+          <% @orders.each do |order| %>
+          <tr>
+            <td><%= link_to order.created_at, admin_order_path(order) %></td>
+              <td><%= order.name %></td>
+              <td><%= order.order_details.sum(:amount) %></td>
+              <td><%= order.status_i18n %></td>
+          </tr>
+          <% end %>
+        </dbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class='container mt-5'>
+    <div class='row'>
+      <div class='mx-auto'>
+        <p><%= paginate @items %></p>
+      </div>
+    </div>
+</div>

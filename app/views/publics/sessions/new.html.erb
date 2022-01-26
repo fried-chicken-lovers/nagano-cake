@@ -1,0 +1,63 @@
+<%= render 'public/header', member: current_member %>
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-4 text-light bg-dark">
+      <h2>ログイン</h2>
+    </div>
+  </div>
+
+
+
+  <div class = "row">
+    <div class = "col-md-4 center-block">
+      <p></p>
+      <h4>会員の方はこちらからログイン</h4>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-md-3 pull-left">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <table>
+        <tr>
+          <div class="field">
+            <td><%= f.label :email %></td>
+            <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div class="field">
+            <td><%= f.label :password %></td>
+            <td><%= f.password_field :password, autocomplete: "current-password" %></td>
+          </div>
+        </tr>
+        <tr>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <td><%= f.check_box :remember_me %></td>
+            <td><%= f.label :remember_me %></td>
+          </div>
+        <% end %>
+        </tr>
+        <tr>
+          <div class="actions">
+            <td><%= f.submit "Log in" %></td>
+          </div>
+        </tr>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-8">
+      <table>
+        <tr><td><p>会員登録がお済みで無い方</p></td>
+        <tr><td><%= link_to "こちらから", new_member_registration_path %><P>新規登録をお願いします</P></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
