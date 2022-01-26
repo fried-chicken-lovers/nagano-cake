@@ -18,11 +18,11 @@
           </tr>
           <tr>
             <th>支払方法</th>
-            <th><%= @order.payment_method %></th>
+            <th><%= @order.payment_method_i18n %></th>
           </tr>
           <tr>
             <th>注文ステータス</th>
-            <th><%= @order.status %></th>
+            <th><%= @order.status_i18n %></th>
           </tr>
         </thead>
       </table>
@@ -57,7 +57,7 @@
     <% @order_details.each do |order_detail| %>
   <tr>
     <td><%= order_detail.item.name %></td>
-    <td><%= order_detail.item.price %></td>
+    <td><%= (order_detail.item.price).to_s + "(" + (order_detail.item.with_tax_price).to_s + ")" %></td>
     <td><%= order_detail.amount %></td>
     <td><%= order_detail.price * order_detail.amount %></td>
    </tr>
