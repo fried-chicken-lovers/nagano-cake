@@ -3,8 +3,11 @@ class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
+
+    @order_detail = OrderDetail.all
     @orders = Order.all
     @items = Item.all.page(params[:page]).per(5)
+
   end
 
   def show

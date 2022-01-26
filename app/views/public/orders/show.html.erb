@@ -1,0 +1,66 @@
+<%= render 'public/header', member: current_member %>
+
+<p>注文履歴</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>注文日</th>
+            <th><%= l @order.created_at, format: :short %></th>
+          </tr>
+          <tr>
+            <th>配送先</th>
+            <th>
+              〒<%= @order.postal_code %><br>
+              <%= @order.adress %><br>
+              <%= @order.name %>
+            </th>
+          </tr>
+          <tr>
+            <th>支払方法</th>
+            <th><%= @order.payment_method %></th>
+          </tr>
+          <tr>
+            <th>注文ステータス</th>
+            <th><%= @order.status %></th>
+          </tr>
+        </thead>
+      </table>
+
+<P>請求情報</P>
+<table>
+  <thead>
+    <tr>
+      <td>商品合計</td>
+      <td><%= @amount %>円</td>
+    </tr>
+    <tr>
+      <td>配送料</td>
+      <td>880円</td>
+    </tr>
+    <tr>
+      <td>ご請求金額</td>
+      <td><%= @amount + 880 %>円</td>
+    </tr>
+  </thead>
+</table>
+
+<p>注文内容</p>
+<table>
+  <tr>
+    <td>商品</td>
+    <td>単価（税込）</td>
+    <td>個数</td>
+    <td>小計</td>
+  </tr>
+
+    <% @order_details.each do |order_detail| %>
+  <tr>
+    <td><%= order_detail.item.name %></td>
+    <td><%= order_detail.item.price %></td>
+    <td><%= order_detail.amount %></td>
+    <td><%= order_detail.price * order_detail.amount %></td>
+   </tr>
+    <% end %>
+
+</table>
