@@ -22,7 +22,10 @@ class Public::OrdersController < ApplicationController
           render :new
         end
     elsif params[:order][:address_number] == "3"
-       address_new = current_member.addresses.new(address_params)
+       address_new = current_member.addresses.new(postal_code: params[:order][:postal_code], residence: params[:order][:address], name: params[:order][:address_name])
+       @order.name = address_new.name
+       @order.adress = address_new.residence
+       @order.postal_code = address_new.postal_code
         if address_new.save
         else
           render :new
@@ -78,4 +81,8 @@ class Public::OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:postal_code, :adress, :name, :payment_method, :total_payment, :status, :shipping_cost)
   end
+
+
+
+
 end
