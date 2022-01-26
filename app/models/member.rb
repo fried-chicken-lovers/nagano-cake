@@ -9,7 +9,14 @@ class Member < ApplicationRecord
   has_many :orders
   has_many :carts, dependent: :destroy
 
-  enum is_deleted: { 退会: true, 有効: false }
+  # enum is_deleted: { 退会: true, 有効: false }
+  def is_deleted_display
+    if is_deleted == true
+      p "退会"
+    else
+      p "有効"
+    end
+  end
 
   def view_member_address
     "〒" + postal_code + " " + address + " " + last_name + first_name
